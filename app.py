@@ -97,7 +97,8 @@ if st.button("🔮 Predict Sales"):
         # Make prediction
         result_df = predict_sales(input_data)
         st.success("Prediction successful!")
-
+        if result_df["sales"]<0:
+            result_df["sales"]=0
         # Display the result
         st.dataframe(result_df)
 

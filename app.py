@@ -99,6 +99,8 @@ if st.button("🔮 Predict Sales"):
         st.success("Prediction successful!")
 
         # Display the result
+        if result_df["sales"]<0.0:
+            result_df["sales"]=0
         st.dataframe(result_df)
 
         # Save the prediction to a CSV file
